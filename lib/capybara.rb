@@ -1,4 +1,4 @@
-require 'timecop_freeze'
+require 'capybara/util/timecop_freeze'
 require 'timeout'
 require 'nokogiri'
 require 'xpath'
