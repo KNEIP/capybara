@@ -13,6 +13,13 @@ HtmlUnit, WebKit and env.js are supported through external gems.
 A complete reference is available at
 {at rubydoc.info}[http://rubydoc.info/github/jnicklas/capybara/master].
 
+== About this fork:
+
+This fork has been created in order to fix the case when using Timecop gem
+in order to freeze the time.
+
+With this fork you can do Timecop.freeze again :-)
+
 == Install:
 
 Install as a gem:
