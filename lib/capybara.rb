@@ -1,6 +1,8 @@
+require 'timecop_freeze'
 require 'timeout'
 require 'nokogiri'
 require 'xpath'
+
 module Capybara
   class CapybaraError < StandardError; end
   class DriverNotFoundError < CapybaraError; end

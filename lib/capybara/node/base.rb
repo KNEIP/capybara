@@ -48,7 +48,7 @@ module Capybara
     protected
 
       def wait_until(seconds=Capybara.default_wait_time)
-        start_time = Time.now
+        start_time = Time.now_for_capybara
 
         begin
           yield
@@ -56,7 +56,7 @@ module Capybara
           raise e if @wait_disabled
           raise e unless driver.wait?
           raise e unless (driver.respond_to?(:invalid_element_errors) and driver.invalid_element_errors.include?(e.class)) or e.is_a?(Capybara::ElementNotFound)
-          raise e if (Time.now - start_time) >= seconds
+          raise e if (Time.now_for_capybara - start_time) >= seconds
           sleep(0.05)
           raise Capybara::FrozenInTime, "time appears to be frozen, Capybara does not work with libraries which freeze time, consider using time travelling instead" if Time.now == start_time
           reload if Capybara.automatic_reload
